@@ -1,0 +1,98 @@
+
+name: "junit-jupiter  Building Java Applications CI windows workflow"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron:  '0 0 1 * *' ##execution of a task in the first minute of the month
+
+jobs:
+
+    
+
+  junit-jupiter-kotlin-java-gradle-win-latest:
+    name: "Building Java Applications Sample Kotlin junit-jupiter"
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: "Building Java Applications Sample Kotlin junit-jupiter"
+      run: |
+          mkdir demo && cd demo
+          # gradle init --project-name demo --type java-application --dsl kotlin
+          gradle init --project-name demo --type java-application --dsl kotlin --test-framework junit-jupiter
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework spock
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework testng
+          echo "==================Run the application=================================================================="   
+          ./gradlew run        
+          echo "==================Bundle the application=================================================================="              
+          ./gradlew build 
+          echo "==================Publish a Build Scan=================================================================="              
+          ./gradlew build --scan
+          cat app/build.gradle.kts  
+
+  junit-jupiter-kotlin-java-gradle-win-2022:
+    name: "Building Java Applications Sample Kotlin junit-jupiter"
+    runs-on: windows-2022
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: "Building Java Applications Sample Kotlin junit-jupiter"
+      run: |
+          mkdir demo && cd demo
+          # gradle init --project-name demo --type java-application --dsl kotlin
+          gradle init --project-name demo --type java-application --dsl kotlin --test-framework junit-jupiter
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework spock
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework testng
+          echo "==================Run the application=================================================================="   
+          ./gradlew run        
+          echo "==================Bundle the application=================================================================="              
+          ./gradlew build 
+          echo "==================Publish a Build Scan=================================================================="              
+          ./gradlew build --scan
+          cat app/build.gradle.kts  
+
+  junit-jupiter-kotlin-java-gradle-win-2019:
+    name: "Building Java Applications Sample Kotlin junit-jupiter"
+    runs-on: windows-2019
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: "Building Java Applications Sample Kotlin junit-jupiter"
+      run: |
+          mkdir demo && cd demo
+          # gradle init --project-name demo --type java-application --dsl kotlin
+          gradle init --project-name demo --type java-application --dsl kotlin --test-framework junit-jupiter
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework spock
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework testng
+          echo "==================Run the application=================================================================="   
+          ./gradlew run        
+          echo "==================Bundle the application=================================================================="              
+          ./gradlew build 
+          echo "==================Publish a Build Scan=================================================================="              
+          ./gradlew build --scan
+          cat app/build.gradle.kts
+
+  junit-jupiter-kotlin-java-gradle-win-2016:
+    name: "Building Java Applications Sample Kotlin junit-jupiter"
+    runs-on: windows-2016
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: "Building Java Applications Sample Kotlin junit-jupiter"
+      run: |
+          mkdir demo && cd demo
+          # gradle init --project-name demo --type java-application --dsl kotlin
+          gradle init --project-name demo --type java-application --dsl kotlin --test-framework junit-jupiter
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework spock
+          # gradle init --project-name demo --type java-application --dsl kotlin --test-framework testng
+          echo "==================Run the application=================================================================="   
+          ./gradlew run        
+          echo "==================Bundle the application=================================================================="              
+          ./gradlew build 
+          echo "==================Publish a Build Scan=================================================================="              
+          ./gradlew build --scan
+          cat app/build.gradle.kts          

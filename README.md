@@ -1,2 +1,2 @@
 # kotlin-java-win-githubactions
-kotlin java win githubactions
+[![windows Building Java Applications CI workflow](https://github.com/githubfoam/kotlin-java-win-githubactions/actions/workflows/win-build-java-wf.yml/badge.svg)](https://github.com/githubfoam/kotlin-java-win-githubactions/actions/workflows/win-build-java-wf.yml)  
